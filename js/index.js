@@ -1,6 +1,8 @@
+// finals
+let count=0;
 const button=document.getElementById("btn");
 button.addEventListener("click", function(){
-    console.log(this.previousElementSibling);
+    this.previousElementSibling.innerText=`Clicks:${++count}`;
 });
 
 /* Vanilla JS
