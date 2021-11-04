@@ -18,11 +18,11 @@
             onMouseEnter:()=>console.log("Hello I'm a title")
         },"Hello I'm a title");
         */
-        const Title=(
-            <h3 id="title" onMouseEnter={()=>console.log("Hello I'm a title")}>
+        const Title=()=>{
+            return (<h3 id="title" onMouseEnter={()=>console.log("Hello I'm a title")}>
                 Hello I'm a title
-            </h3>
-        );
+            </h3>);
+        };
         /*
         const btn=React.createElement("button",{
             onClick:()=>console.log("I'm clicked"),
@@ -35,17 +35,22 @@
             }
         },"Click Me");
         */
-        const Btn=(
-            <button
+        const Btn=()=>{
+            return (<button
                 styles={{backgroundColor: "tomato"}}
                 onClick={()=>console.log("I'm clicked")}
             >
                 Click Me
-            </button>
-        );
-        const container=React.createElement("div",null,[Title,Btn]);
+            </button>);
+        };
+        const Container=(
+            <div>
+                {<Title />}
+                <Btn />
+            </div>
+        )
         // TYPE NAME=React.createElement("TAGS",PROPS,CONTAINS);
-        ReactDOM.render(container,root);
+        ReactDOM.render(Container,root);
     </script>
 </body>
 </html>
